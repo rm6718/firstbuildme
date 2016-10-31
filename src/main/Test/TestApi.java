@@ -1,6 +1,4 @@
-package com.ironyard.inspo;
-
-import com.ironyard.inspo.dto.BollywoodSongs;
+import com.ironyard.inspo.data.BollywoodSongs;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
 

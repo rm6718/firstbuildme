@@ -1,6 +1,6 @@
 package com.ironyard.inspo.controller;
 
-import com.ironyard.inspo.dto.BollywoodSongs;
+import com.ironyard.inspo.data.BollywoodSongs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.*;
@@ -19,7 +19,9 @@ import java.util.List;
  */
 @RestController
 public class BollywoodSongsController {
+
     private final Logger log = LoggerFactory.getLogger(this.getClass());
+
 
     @RequestMapping(value = "/service/bwsongs", method = RequestMethod.GET)
     public Iterable<BollywoodSongs> list(@RequestParam(value = "filter", required = false)String filter){

@@ -1,10 +1,9 @@
 package com.ironyard.inspo.controller;
 
-import com.ironyard.inspo.dto.BollywoodSongs;
+import com.ironyard.inspo.data.BollywoodSongs;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.*;
@@ -15,7 +14,8 @@ import java.util.*;
 @Controller
 public class BollywoodSongsJspController {
 
-    @RequestMapping(value = "/inspo/songs", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/sleepover/songs", method = RequestMethod.GET)
     public String list(Map<String, Object> model){
         RestTemplate restTemplate = new RestTemplate();
         BollywoodSongs[] songs = restTemplate.getForObject("http://api.cinemalytics.in/v2/song/latest-songs/?auth_token=E1F44609FDE7F5E9190CBBECE89B84E2", BollywoodSongs[].class);
@@ -36,8 +36,13 @@ public class BollywoodSongsJspController {
 //        }
 
         model.put("songs", foundAllList);
-        return "inspo";
+        return "songs";
     }
+
+
+
+
+
 
 }
 

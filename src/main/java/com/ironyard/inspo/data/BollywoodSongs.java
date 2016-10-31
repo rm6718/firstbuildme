@@ -1,4 +1,4 @@
-package com.ironyard.inspo.dto;
+package com.ironyard.inspo.data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
